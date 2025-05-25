@@ -1,1 +1,45 @@
+bootstrap-5.x.x-dist/
+├── css/
+├── js/
+└── icons/
+
+1. css/ Folder
+Contains: Compiled CSS files for Bootstrap’s styling.
+
+Purpose: Provides ready-to-use styles for layout, typography, components, and utilities.
+
+Key files:
+
+bootstrap.min.css — Minified CSS for production.
+
+bootstrap.css — Full unminified CSS (for development/debugging).
+
+bootstrap.rtl.min.css — Right-to-left language support.
+
+bootstrap-grid.min.css — Only grid system CSS.
+
+bootstrap-utilities.min.css — Only utility classes CSS.
+
+2. js/ Folder
+Contains: JavaScript files for Bootstrap’s interactive features.
+
+Purpose: Enable dynamic components like modals, tooltips, dropdowns, and carousels.
+
+Key files:
+
+bootstrap.bundle.min.js — Bootstrap JS bundled with Popper.js (required for tooltips and popovers).
+
+bootstrap.min.js — Bootstrap JS without Popper.js (Popper must be added separately if needed).
+
+3. icons/ Folder (Optional)
+Contains: Bootstrap Icons files (SVGs and CSS).
+
+Purpose: Provides a set of vector icons that integrate seamlessly with Bootstrap.
+
+Key files:
+
+bootstrap-icons.css — CSS for easy icon usage.
+
+SVG icon files.
+
 
