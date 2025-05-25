@@ -1,0 +1,6 @@
+Download JD-GUI from:
+https://java-decompiler.github.io/
+
+Open JD-GUI and drag the Greet.class file into it.
+
+It will return the decompiled source code
