@@ -1,1 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Local Community Event Portal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #222;
+    }
+
+    nav {
+      background: linear-gradient(90deg, #4b6cb7, #182848);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover,
+    nav a.active {
+      text-decoration: underline;
+    }
+
+    #toggleDarkMode {
+      background-color: #fff;
+      color: #333;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    header {
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, #87bfff, #c2e9fb);
+      color: #222;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    header span {
+      display: block;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      font-weight: 400;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    h2, h3 {
+      color: #2c3e50;
+    }
+
+    .event-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .event-gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    form {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.3rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      background-color: #fff;
+      color: #222;
+    }
+
+    form button {
+      background-color: #4b6cb7;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-right: 1rem;
+    }
+
+    form button:hover {
+      background-color: #3a56a1;
+    }
+
+    .video-container {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    video {
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #2c3e50;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    .dark {
+      background-color: #1c1c1c;
+      color: #f5f5f5;
+    }
+
+    .dark nav {
+      background: #111;
+    }
+
+    .dark #toggleDarkMode {
+      background: #eee;
+      color: #111;
+    }
+
+    .dark form, .dark header, .dark footer {
+      background: #2a2a2a;
+      color: #f5f5f5;
+    }
+
+    .dark form input,
+    .dark form textarea,
+    .dark form select {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div>
+      <a href="#home" class="active">Home</a>
+      <a href="#events">Events</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button id="toggleDarkMode">🌙 Toggle Mode</button>
+  </nav>
+
+  <header>
+    Welcome, User!<span>Special Offer Today!</span>
+  </header>
+
+  <main>
+    <h2 id="events">Past Events Gallery</h2>
+    <div class="event-gallery">
+      <img src="images/ep1.jpeg" alt="Community Workshop">
+      <img src="images/ep2.jpg" alt="Seminar on Health">
+      <img src="images/ep3.jpg" alt="Local Festival">
+      <img src="images/ep4.jpg" alt="Neighborhood Cleanup">
+      <img src="images/ep5.jpg" alt="Charity Event">
+      <img src="images/ep6.jpeg" alt="Cultural Night">
+    </div>
+
+    <h3>Register for an Event</h3>
+    <form>
+      <label>Name:
+        <input type="text" name="name" placeholder="Enter your name" required />
+      </label>
+      <label>Email:
+        <input type="email" name="email" placeholder="Enter your email" required />
+      </label>
+      <label>Event Type:
+        <select name="eventType" required>
+          <option value="">Select</option>
+          <option value="Workshop">Workshop</option>
+          <option value="Seminar">Seminar</option>
+          <option value="Festival">Festival</option>
+        </select>
+      </label>
+      <label>Message:
+        <textarea name="message" rows="4" placeholder="Your message or feedback..."></textarea>
+      </label>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+
+    <h3>Event Promo Video</h3>
+    <div class="video-container">
+      <video width="480" height="270" controls>
+        <source src="videos/promo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <h3>Your Location</h3>
+    <div id="locationStatus">Detecting location...</div>
+    <div id="userLocation" style="margin-bottom: 2rem;"></div>
+
+    <h3 id="contact">Contact Us</h3>
+    <form>
+      <label>Your Name:
+        <input type="text" name="contactName" placeholder="Full name" required />
+      </label>
+      <label>Your Email:
+        <input type="email" name="contactEmail" placeholder="Email address" required />
+      </label>
+      <label>Your Message:
+        <textarea name="contactMessage" rows="4" placeholder="Type your message here..." required></textarea>
+      </label>
+      <button type="submit">Send</button>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2025 Local Community Event Portal. All rights reserved.
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('toggleDarkMode');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+
+    function displayLocation(position) {
+      const { latitude, longitude } = position.coords;
+      document.getElementById('locationStatus').textContent = "Location found:";
+      document.getElementById('userLocation').innerHTML = `
+        <strong>Latitude:</strong> ${latitude}<br />
+        <strong>Longitude:</strong> ${longitude}
+      `;
+    }
+
+    function locationError(error) {
+      document.getElementById('locationStatus').textContent = 
+        "Unable to retrieve location. Please allow permission.";
+    }
+
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(displayLocation, locationError);
+    } else {
+      document.getElementById('locationStatus').textContent = "Geolocation not supported by your browser.";
+    }
+  </script>
+</body>
+</html>
 
